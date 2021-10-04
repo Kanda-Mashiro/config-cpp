@@ -10,6 +10,7 @@ TEST(test_config_file_type, GenConfigFileTypeFromString)
   ASSERT_TRUE(GenConfigFileTypeFrom("XML") == ConfigFileType::XML);
   ASSERT_TRUE(GenConfigFileTypeFrom("JSON") == ConfigFileType::JSON);
   ASSERT_TRUE(GenConfigFileTypeFrom("YAML") == ConfigFileType::YAML);
+  ASSERT_TRUE(GenConfigFileTypeFrom("") == ConfigFileType::UNKNOWN);
 }
 
 TEST(test_config_file_type, GenConfigFileTypeFromNumber)
@@ -20,6 +21,7 @@ TEST(test_config_file_type, GenConfigFileTypeFromNumber)
   ASSERT_TRUE(GenConfigFileTypeFrom(2) == ConfigFileType::XML);
   ASSERT_TRUE(GenConfigFileTypeFrom(3) == ConfigFileType::JSON);
   ASSERT_TRUE(GenConfigFileTypeFrom(4) == ConfigFileType::YAML);
+  ASSERT_TRUE(GenConfigFileTypeFrom(255) == ConfigFileType::UNKNOWN);
 }
 
 TEST(test_config_file_type, PrintConfigFileType)

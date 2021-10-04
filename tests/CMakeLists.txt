@@ -18,7 +18,7 @@ foreach(path IN LISTS paths)
   add_executable(${exec} ${path})
   target_link_libraries(${exec} ${CONFIG_CPP_LIBS} gtest)
   
-  add_test(unit_test ${exec})
+  add_test(${exec} ${exec})
 
   message(STATUS "build: [${path} -> ${exec}]")
 endforeach()

@@ -13,6 +13,7 @@ TEST(test_value_type, GenValueTypeFromString)
   ASSERT_TRUE(GenValueTypeFrom("STRING") == ValueType::STRING);
   ASSERT_TRUE(GenValueTypeFrom("LIST") == ValueType::LIST);
   ASSERT_TRUE(GenValueTypeFrom("DICT") == ValueType::DICT);
+  ASSERT_TRUE(GenValueTypeFrom("") == ValueType::UNDEFINE);
 }
 
 TEST(test_value_type, GenValueTypeFromNumber)
@@ -26,6 +27,7 @@ TEST(test_value_type, GenValueTypeFromNumber)
   ASSERT_TRUE(GenValueTypeFrom(5) == ValueType::STRING);
   ASSERT_TRUE(GenValueTypeFrom(6) == ValueType::LIST);
   ASSERT_TRUE(GenValueTypeFrom(7) == ValueType::DICT);
+  ASSERT_TRUE(GenValueTypeFrom(255) == ValueType::UNDEFINE);
 }
 
 TEST(test_value_type, PrintValueType)
