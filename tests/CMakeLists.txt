@@ -8,6 +8,7 @@ include_directories(${gtest_SOURCE_DIR}/include)
 # Tests
 set(paths
   ${CMAKE_CURRENT_SOURCE_DIR}/test_config_file_type.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/test_value_type.cpp
 )
 
 foreach(path IN LISTS paths)
