@@ -26,7 +26,7 @@ namespace cc
 // 4. YAML 文件格式。
 enum class ConfigFileType : std::uint8_t 
 {
-  UNKNOWN = 0,
+  UNDEFINE = 0,
   INI,
   XML,
   JSON,

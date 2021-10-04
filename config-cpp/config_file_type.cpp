@@ -22,7 +22,7 @@ ConfigFileType GenConfigFileTypeFrom(const std::string& str)
   XX("JSON", JSON)
   XX("YAML", YAML)
 #undef XX
-  return ConfigFileType::UNKNOWN;
+  return ConfigFileType::UNDEFINE;
 }
 
 ConfigFileType GenConfigFileTypeFrom(std::uint8_t num)
@@ -35,7 +35,7 @@ ConfigFileType GenConfigFileTypeFrom(std::uint8_t num)
   XX(3, JSON)
   XX(4, YAML)
 #undef XX
-  return ConfigFileType::UNKNOWN;
+  return ConfigFileType::UNDEFINE;
 }
 
 std::ostream& operator<<(std::ostream& stream, const ConfigFileType& file_type)
@@ -51,9 +51,9 @@ std::ostream& operator<<(std::ostream& stream, const ConfigFileType& file_type)
     XX(YAML, "YAML")
 #undef XX
     default:
-      return stream << "UNKNOWN";
+      return stream << "UNDEFINE";
   }
-  return stream << "UNKNOWN";
+  return stream << "UNDEFINE";
 }
 
 

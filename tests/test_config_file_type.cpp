@@ -5,23 +5,23 @@
 TEST(test_config_file_type, GenConfigFileTypeFromString)
 {
   using namespace cc;
-  ASSERT_TRUE(GenConfigFileTypeFrom("UNKNOWN") == ConfigFileType::UNKNOWN);
+  ASSERT_TRUE(GenConfigFileTypeFrom("UNDEFINE") == ConfigFileType::UNDEFINE);
   ASSERT_TRUE(GenConfigFileTypeFrom("INI") == ConfigFileType::INI);
   ASSERT_TRUE(GenConfigFileTypeFrom("XML") == ConfigFileType::XML);
   ASSERT_TRUE(GenConfigFileTypeFrom("JSON") == ConfigFileType::JSON);
   ASSERT_TRUE(GenConfigFileTypeFrom("YAML") == ConfigFileType::YAML);
-  ASSERT_TRUE(GenConfigFileTypeFrom("") == ConfigFileType::UNKNOWN);
+  ASSERT_TRUE(GenConfigFileTypeFrom("") == ConfigFileType::UNDEFINE);
 }
 
 TEST(test_config_file_type, GenConfigFileTypeFromNumber)
 {
   using namespace cc;
-  ASSERT_TRUE(GenConfigFileTypeFrom(0) == ConfigFileType::UNKNOWN);
+  ASSERT_TRUE(GenConfigFileTypeFrom(0) == ConfigFileType::UNDEFINE);
   ASSERT_TRUE(GenConfigFileTypeFrom(1) == ConfigFileType::INI);
   ASSERT_TRUE(GenConfigFileTypeFrom(2) == ConfigFileType::XML);
   ASSERT_TRUE(GenConfigFileTypeFrom(3) == ConfigFileType::JSON);
   ASSERT_TRUE(GenConfigFileTypeFrom(4) == ConfigFileType::YAML);
-  ASSERT_TRUE(GenConfigFileTypeFrom(255) == ConfigFileType::UNKNOWN);
+  ASSERT_TRUE(GenConfigFileTypeFrom(255) == ConfigFileType::UNDEFINE);
 }
 
 TEST(test_config_file_type, PrintConfigFileType)
@@ -29,8 +29,8 @@ TEST(test_config_file_type, PrintConfigFileType)
   using namespace cc;
   {
     std::stringstream stream;
-    stream << ConfigFileType::UNKNOWN;
-    ASSERT_TRUE(stream.str() == "UNKNOWN");
+    stream << ConfigFileType::UNDEFINE;
+    ASSERT_TRUE(stream.str() == "UNDEFINE");
   }
   {
     std::stringstream stream;
