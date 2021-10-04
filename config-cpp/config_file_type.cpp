@@ -40,7 +40,7 @@ ConfigFileType GenConfigFileTypeFrom(std::uint8_t num)
 
 std::ostream& operator<<(std::ostream& stream, const ConfigFileType& file_type)
 {
-  switch(file_type)
+  switch (file_type)
   {
 #define XX(from, to) \
     case ConfigFileType::from: \
